@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  booking_number: 1
+  issue_id: 
+  client_id: 
+  ad_size: MyString
+  position: MyString
+  status: MyString
+
+two:
+  booking_number: 1
+  issue_id: 
+  client_id: 
+  ad_size: MyString
+  position: MyString
+  status: MyString
