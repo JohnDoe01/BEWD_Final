@@ -1,3 +1,3 @@
 class Issue < ActiveRecord::Base
-  has_many: bookings 
+  has_many :bookings 
 end
