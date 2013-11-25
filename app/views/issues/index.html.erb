@@ -1,0 +1,20 @@
+  <h1>Issues list</h1>
+  <div class="table-responsive">
+    <table class="table">
+      <tr>
+        <th>Issue Date</th>
+        <th>Booking Deadline</th>
+        <th>Print Deadline</th>
+        <th>Status</th>
+      </tr>
+     
+      <% @issues.each do |i| %>
+        <tr>
+          <td><%= link_to "#{i.issue_date}", "issue/#{i.id}" %></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>

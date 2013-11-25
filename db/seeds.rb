@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+FirstDate = DateTime.new(2014,1,10)
+numberOfIssues = 50
+
+for week in (1..numberOfIssues)
+  Issue.create(:issue_date => FirstDate + 7 * week)
+end

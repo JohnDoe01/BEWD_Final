@@ -1,9 +1,10 @@
 ADCManager::Application.routes.draw do
-  # get "clients/index"
+
   devise_for :users
   root "home#index"
-  resources :bookings, :clients, :issues
-
+  resources :bookings, :clients
+  get "issues" => "issues#index", as: "issues"
+  get "issue/:id" => "issues#show", as: "issue_path"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
