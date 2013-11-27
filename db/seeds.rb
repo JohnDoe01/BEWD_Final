@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
+# Issue.delete_all
 FirstDate = DateTime.new(2014,1,10)
 numberOfIssues = 50
 

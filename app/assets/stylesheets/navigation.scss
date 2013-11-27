@@ -1,0 +1,9 @@
+body.home .nav-pills li.home,
+body.bookings .nav-pills li.bookings,
+body.clients .nav-pills li.clients,
+body.issues .nav-pills li.issues {
+  a, a:hover, a:focus {
+    color: #ffffff;
+    background-color: #428bca;
+  }  
+}
