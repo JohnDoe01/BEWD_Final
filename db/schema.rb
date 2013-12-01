@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131118091444) do
+ActiveRecord::Schema.define(version: 20131130025234) do
 
   create_table "bookings", force: true do |t|
     t.integer  "booking_number"
@@ -22,6 +22,10 @@ ActiveRecord::Schema.define(version: 20131118091444) do
     t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "creative_file_name"
+    t.string   "creative_content_type"
+    t.integer  "creative_file_size"
+    t.datetime "creative_updated_at"
   end
 
   add_index "bookings", ["client_id"], name: "index_bookings_on_client_id"

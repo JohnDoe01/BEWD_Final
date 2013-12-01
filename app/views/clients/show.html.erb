@@ -1,13 +1,21 @@
+
+<div>
   <dl>
     <dt>Advertiser:</dt>
     <dd><%= @client.advertiser %></dd>
+    <br/>
     <dt>Name:</dt>
     <dd><%= @client.name %></dd>
+    <br/>
     <dt>Phone:</dt>
     <dd><%= @client.phone %></dd>
+    <br/>
     <dt>Email:</dt>
     <dd><%= @client.email %></dd>  
   </dl>
+</div>
 
+<div>
   <%= link_to 'Back', clients_path, :class => "btn btn-primary" %>
   <%= link_to 'Edit', edit_client_path(@client), :class => "btn btn-primary" %>  
+</div>

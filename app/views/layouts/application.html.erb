@@ -7,44 +7,44 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= controller_name %>">
-   <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="home"><%= link_to "Home", "/"%></li>
-          <li class="bookings"><%= link_to "Bookings", bookings_path%></li>
-          <li class="clients"><%= link_to "Clients", clients_path%></li>
-          <li class="issues"><%= link_to "Issues", issues_path%></li>
-          <li><%= link_to "Tearsheets", "#", :data => {:target => '#myModal', :toggle => 'modal'} %></li>
-          <li><%= link_to "Quotes", "#", :data => {:target => '#myModal', :toggle => 'modal'} %></li>
-          <li><%= link_to "Creative", "#", :data => {:target => '#myModal', :toggle => 'modal'} %></li>
-        </ul>
-        <h3 class="text-muted"><%= image_tag "ausdoc_logo.png" %></h3>
-      </div>
-  
-    <% if user_signed_in? %>
-      <span>You are logged in as <%= current_user.email %></span>
-      <%= link_to 'Logout', destroy_user_session_path, :method => 'delete' %>
-    <% else %>
-      <%= link_to 'Login', new_user_session_path %>
-    <% end %>
-
-    <% if notice %>
-      <p class ="alert alert-notice"><%= notice %></p>
-    <% end %>
-
-    <% if alert %>
-      <p class ="alert alert-error"><%= alert %></p>
-    <% end %>
-
-    <%= yield %>
-
-    <hr>
-
-    <footer>
-      <p>&copy; Cirrus Media 2013</p>
-    </footer>
-    
+<div class="container">
+  <div class="header">
+    <ul class="nav nav-pills pull-right">
+      <li class="home"><%= link_to "Home", "/"%></li>
+      <li class="bookings"><%= link_to "Bookings", bookings_path%></li>
+      <li class="clients"><%= link_to "Clients", clients_path%></li>
+      <li class="issues"><%= link_to "Issues", issues_path%></li>
+      <li><%= link_to "Tearsheets", "#", :data => {:target => '#myModal', :toggle => 'modal'} %></li>
+      <li><%= link_to "Quotes", "#", :data => {:target => '#myModal', :toggle => 'modal'} %></li>
+      <li><%= link_to "Creative", "#", :data => {:target => '#myModal', :toggle => 'modal'} %></li>
+    </ul>
+    <h3 class="text-muted"><%= image_tag "ausdoc_logo.png" %></h3>
   </div>
+
+  <% if user_signed_in? %>
+  <span>You are logged in as <%= current_user.email %></span>
+  <%= link_to 'Logout', destroy_user_session_path, :method => 'delete' %>
+  <% else %>
+  <%= link_to 'Login', new_user_session_path %>
+  <% end %>
+
+  <% if notice %>
+  <p class ="alert alert-notice"><%= notice %></p>
+  <% end %>
+
+  <% if alert %>
+  <p class ="alert alert-error"><%= alert %></p>
+  <% end %>
+
+  <%= yield %>
+
+  <hr>
+
+  <footer>
+  <p>&copy; Cirrus Media 2013</p>
+  </footer>
+
+</div>
 
   <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -57,7 +57,7 @@
         Sorry....We're not quite there yet, but this feature will be ready in a future release!
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

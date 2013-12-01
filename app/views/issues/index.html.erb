@@ -1,6 +1,6 @@
   <h1>Issues list</h1>
   <div class="table-responsive">
-    <table class="table">
+    <table class="table table-hover">
       <tr>
         <th>Issue Date</th>
         <th>Booking Deadline</th>
@@ -11,10 +11,17 @@
       <% @issues.each do |i| %>
         <tr>
           <td><%= link_to "#{i.issue_date}", "issue/#{i.id}" %></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td><%= (i.issue_date - 22) %></td>
+          <td><%= (i.issue_date - 8) %></td>
+          <% if i.getStatus == "APPROVED TO PRINT" %>
+            <td class= "text-success"><%= i.getStatus %></td>
+            <% elsif i.getStatus == "NO BOOKINGS" %>
+            <td class= "text-danger"><%= i.getStatus %></td>  
+            <% else %>  
+            <td class= "text-warning"><%= i.getStatus %></td>                      
+          <% end %>
         </tr>
       <% end %>
     </table>
   </div>
+

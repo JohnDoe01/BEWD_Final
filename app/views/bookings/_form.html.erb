@@ -1,8 +1,8 @@
-<%= form_for @booking do |f| %>
+<%= form_for @booking, :html => { :multipart => true } do |f| %>
   <% if @booking.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(@booking.errors.count, "error") %> prohibited
-      this booking from being saved:</h2>
+    <h4><%= pluralize(@booking.errors.count, "error") %> prohibited
+      this booking from being saved:</h4>
     <ul>
     <% @booking.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
@@ -10,37 +10,51 @@
     </ul>
   </div>
   <% end %>
-  <p>
+
+  <div class="form-group">
     <%= f.label :booking_number %><br>
-    <%= f.text_field :booking_number %>
-  </p>
+    <%= f.text_field :booking_number, :class => "form-control" %>
+  </div>
+ 
+  <div class="form-group">
+    <%= f.label :issue_date %><br>
+    <%= f.select :issue_id, Issue.all.collect{|i| [i.issue_date,i.id]}, {:include_blank => "Please select an issue"}, {:class => "form-control"} %>
+  </div>
 
-  <p>
-    <%= f.label :issue %><br>
-    <%= f.text_field :issue %>
-  </p>
-
-  <p>
+  <div class="form-group">
     <%= f.label :client %><br>
-    <%= f.text_field :client %>
-  </p>
+    <%= f.select :client_id, Client.all.collect{|c| [c.advertiser,c.id]}, {:include_blank => "Please select a Client"}, {:class => "form-control"} %>
+  </div>
 
-  <p>
+  <div class="form-group">
     <%= f.label :ad_size %><br>
-    <%= f.text_field :ad_size %>
-  </p>
+    <%= f.text_field :ad_size, :class => "form-control" %>
+  </div>
 
-  <p>
+  <div class="form-group">
     <%= f.label :position %><br>
-    <%= f.text_field :position %>
-  </p>
+    <%= f.select :position, ["COU","NAT","COU","NSW","QLD","VIC","SA","NT","ACT","FOR","P&S","MPS","COU","GEN"], 
+    {:include_blank => "Please select a position"}, {:class => "form-control"} %>
+  </div>
 
-  <p>
+  <div class="form-group">
+    <%= f.label :creative %><br>
+    <%= f.file_field :creative %>
+  </div>
+
+  <div class="form-group">
     <%= f.label :status %><br>
-    <%= f.text_field :status %>
-  </p>
+    <%= f.select :status, ["Booking Entered", "MI's to come","1st Proof","Corrections required","2nd proof","APPROVED"], 
+    {:include_blank => "Please select a status"}, {:class => "form-control"} %>
+  </div>
 
-  <p>
-    <%= f.submit %>
-  </p>
+
+  <div class="form-group">
+    <%= f.submit :class => "btn btn-primary" %>
+  </div>
+
 <% end %>
+
+
+
+

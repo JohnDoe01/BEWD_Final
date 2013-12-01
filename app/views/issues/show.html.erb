@@ -1,3 +1,13 @@
-  <h1>Show issue date here</h1>
+  <h1><%= @issue.issue_date %></h1>
   <h2>Issue Plan</h2>
+  <ul>
+    <% @issue.bookings.each do |b| %>
+    <li>Booking Number: <td><%= link_to "#{b.booking_number}", "/booking/#{b.id}" %></td></li>
+    <li>Booking Status: <%=b.status %></li>
+    <br/>
+    <% end %>
+  </ul>
+
   <%= link_to 'Back', issues_path, :class => "btn btn-primary" %>
+
+

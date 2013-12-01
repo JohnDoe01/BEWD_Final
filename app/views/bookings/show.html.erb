@@ -1,19 +1,32 @@
+
+<div>
   <dl>
     <dt>Booking Number:</dt>
     <dd><%= @booking.booking_number %></dd>
+    <br/>
     <dt>Issue:</dt>
     <dd><%= @booking.issue_id %></dd>
+    <br/>
     <dt>Client:</dt>
     <dd><%= @booking.client_id %></dd>
+    <br/>
     <dt>Ad Size:</dt>
     <dd><%= @booking.ad_size %></dd>
+    <br/>
     <dt>Position:</dt>
     <dd><%= @booking.position %></dd>
+    <br/>
     <dt>Status:</dt>
     <dd><%= @booking.status %></dd>
-
   </dl>
+</div>
 
+<br/>
+
+<div>
   <%= link_to 'Back', bookings_path, :class => "btn btn-primary" %>
   <%= link_to 'Edit', edit_booking_path(@booking), :class => "btn btn-primary" %>  
+</div>
+
+
 
