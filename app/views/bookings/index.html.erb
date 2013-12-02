@@ -1,14 +1,15 @@
 <h1>Bookings</h1>
 
   <div class="table-responsive">
-    <table class="table">
+    <table class="table table-hover">
       <tr>
-        <th>Booking Number</th>
+        <th>Booking</th>
         <th>Issue Date</th>
-        <th>Client</th>
+        <th>Advertiser</th>
         <th>Ad Size</th>
         <th>Position</th>
         <th>Status</th>
+        <th>Creative</th>
         <th colspan="2">Actions</th>
       </tr>
      
@@ -16,11 +17,15 @@
         <tr>
           <td><%= booking.booking_number %></td>
           <td><%= booking.issue.issue_date %></td>
-          <td><%= booking.client_id %></td>
+          <td><%= booking.client.advertiser %></td>
           <td><%= booking.ad_size %></td>
           <td><%= booking.position %></td>
           <td><%= booking.status %></td>
-          <!--<td><%= link_to 'Show', booking %></td>-->
+          <td>
+          <% if booking.creative.instance.creative_file_name != nil %>
+            <%= link_to 'View file', booking.creative.url %>
+          <% end %>
+          </td>
           <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
           <td><%= link_to 'Delete', booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>

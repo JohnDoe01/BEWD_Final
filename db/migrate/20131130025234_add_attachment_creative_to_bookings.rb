@@ -1,11 +1,10 @@
 class AddAttachmentCreativeToBookings < ActiveRecord::Migration
   def self.up
-    change_table :bookings do |t|
-      t.attachment :creative
+     add_attachment :bookings, :creative
     end
   end
 
   def self.down
-    drop_attached_file :bookings, :creative
+    remove_attachment :bookings, :creative
   end
 end

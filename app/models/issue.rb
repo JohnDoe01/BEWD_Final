@@ -10,7 +10,8 @@ class Issue < ActiveRecord::Base
     end
   
     self.bookings.each do |b|
-      if b.status != "APPROVED"
+      if b.status != "APPROVED" && 
+        b.status != "REPEAT MATERIAL"
         status = "PENDING"
       end
     end

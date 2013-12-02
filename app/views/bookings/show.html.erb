@@ -18,6 +18,11 @@
     <br/>
     <dt>Status:</dt>
     <dd><%= @booking.status %></dd>
+    <br/>
+    <dt>Creative:</dt>
+    <% if @booking.creative.instance.creative_file_name != nil %>
+    <dd><%= link_to 'View file', @booking.creative.url %></dd>
+    <% end %>
   </dl>
 </div>
 
