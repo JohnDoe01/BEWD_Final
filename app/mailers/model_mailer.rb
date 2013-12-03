@@ -6,9 +6,16 @@ class ModelMailer < ActionMailer::Base
   #
   #   en.model_mailer.new_booking_notification.subject
   #
-  def new_booking_notification(booking)
-    @booking = booking
 
-    mail to: "eryk.koziol@gmail.com", subject: "ADCManager"
+  def new_booking_notification(booking)
+      @booking = booking
+
+      users = []
+      User.all.each do |u|
+        users << u.email
+      end
+      users = users.join(", ")
+
+      mail to: users, subject: "ADCM - Notification"
   end
 end
